@@ -1,22 +1,15 @@
 package day059;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 public class Task59 {
     public static void main(String[] args) {
 
         ArrayList<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4);
-        numbers.add(5);
-        numbers.add(6);
-        numbers.add(7);
-        numbers.add(8);
-        numbers.add(9);
-        numbers.add(10);
+        Collections.addAll(numbers,1,2,3,4,5,6,7,8,9,10);
 
         ArrayList<Integer> oddNumbers = new ArrayList<>();
         ArrayList<Integer> evenNumbers = new ArrayList<>();
@@ -46,6 +39,31 @@ public class Task59 {
             }
         }
         System.out.println(numbers);
+
+        // Gürhan Hocanın Çözümü
+
+        List<Integer> numbers1 = new ArrayList<>();
+        Collections.addAll(numbers1,1,2,3,4,5,6,7,8,9,10);
+
+        List<Integer> oddNumbers1 = new ArrayList<>();
+        List<Integer> evenNumbers1 = new ArrayList<>();
+
+        for (var item : numbers1){
+            boolean b = item % 2 == 0 ? evenNumbers1.add(item) : oddNumbers1.add(item);
+        }
+
+        for (var item : numbers1){
+            System.out.print(item+" ");
+        }
+        System.out.println();
+
+        Iterator<Integer> iterator1 = oddNumbers1.iterator();
+        while (iterator1.hasNext()){
+            System.out.print(iterator1.next()+" ");
+        }
+        System.out.println();
+
+        System.out.println(evenNumbers1);
 
 
     }
