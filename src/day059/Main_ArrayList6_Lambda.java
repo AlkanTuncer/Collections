@@ -38,5 +38,7 @@ public class Main_ArrayList6_Lambda {
 
         calisanlar.stream().sorted(Comparator.comparing(Personel::isim)).forEach(item -> System.out.println(item));
 
+        calisanlar.stream().filter(item -> item.maas() < 5000).sorted(Comparator.comparing(Personel::isim).reversed()).forEach(item-> System.out.println(item));
+
     }
 }
